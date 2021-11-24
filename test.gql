@@ -1,0 +1,45 @@
+type User{
+    id: ID!
+    username: String!
+    age: Int
+    height: Float
+    is_active: Boolean
+}
+
+# THis is a continent
+type Continent{
+    name: String
+    population: Int
+    number_countries: Int
+    avg_population: Float
+}
+
+type City{
+    name: String
+    population: Int
+}
+
+type Country{
+    name: String
+    capital: City
+    population: Int
+    PIB: Float
+    continent: Continent 
+    ciudades: [City]
+    flag: String
+}
+
+
+type Query{
+    getAllUsers: [User]
+    getCityByName(name: String!): City
+    getUserByID(id: ID!): User
+    numberOfCities: Int
+    getCountriesWithPopulation(n: Int): [Country] 
+}
+
+type Mutation{
+    createCity(name: String, population: Int): City
+    updateAgeUser(id: ID!, age: Int): User
+    deleteAllCountries(countries: [Country]):Boolean
+}
