@@ -1,5 +1,5 @@
-const accountTypeDefs = require('./account_type_def')
+const accountTypeDefs = require('./account_type_def');
 
-const schemasArray = [accountTypeDefs]
+const schemasArray = [accountTypeDefs];
 
 module.exports = schemasArray;
