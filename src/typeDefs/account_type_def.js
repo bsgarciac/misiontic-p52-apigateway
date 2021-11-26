@@ -9,6 +9,7 @@ const accountTypeDefs = gql`
 
     type Query{
         accountByUsername(username: String!): Account
+        myAccount: Account
     }
 `;
 
