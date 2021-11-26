@@ -3,7 +3,7 @@ const authResolver = {
         login: async (_, { credentials }, { dataSources }) => {
             return await dataSources.authAPI.loginRequest(credentials);
         },
-        signup: async (_, { signupData }, { dataSources }) => {
+        signUp: async (_, { signupData }, { dataSources }) => {
             // Creating Account
             const accountData = {
                 username: signupData.username,
