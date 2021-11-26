@@ -4,6 +4,7 @@ const authResolver = {
             return await dataSources.authAPI.loginRequest(credentials);
         },
         signUp: async (_, { signupData }, { dataSources }) => {
+            console.log("entra")
             // Creating Account
             const accountData = {
                 username: signupData.username,
@@ -11,6 +12,7 @@ const authResolver = {
                 lastChange: (new Date()).toISOString()
             }
             await dataSources.accountAPI.createAccount(accountData);
+            console.log("falla")
             // Creating User
             const userData = {
                 username: signupData.username,
