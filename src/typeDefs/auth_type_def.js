@@ -7,12 +7,20 @@ const authTypeDefs = gql`
         password: String!
     }
 
+    input SignupInput{
+        username: String!
+        password1: String!
+        password2: String!
+        balance: Int
+    }
+
     type Token {
         key: String!
     }
 
     type Mutation{
         login(credentials: LoginInput!): Token!
+        signUp(signupData: SignupInput!): Token!
     }
 `;
 
