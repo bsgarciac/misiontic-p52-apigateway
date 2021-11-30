@@ -1,12 +1,16 @@
 const transactionResolver = {
     Query: {
-        transactionByUsername: async (_, {username}, {dataSources}) => {
-            return await dataSources.account_api.transactionByUsername(username);
+        transactionByUsername: async (_, {username}, {dataSources, usernameToken}) => {
+            if(username == usernameToken){
+                return await dataSources.accountAPI.transactionByUsername(username);
+            }else{
+                return null
+            }
         }
     },
     Mutation: {
         createTransaction: async (_, {transaction}, {dataSources}) => {
-            return await dataSources.account_api.createTransaction(transaction);
+            return await dataSources.accountAPI.createTransaction(transaction);
         }
     }
 }
