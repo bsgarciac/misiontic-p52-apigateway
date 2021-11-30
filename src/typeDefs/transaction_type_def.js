@@ -23,3 +23,5 @@ const transactionTypeDefs = gql`
         createTransaction(transaction: TransactionInput!): Transaction
     }
 `;
+
+module.exports = transactionTypeDefs;
