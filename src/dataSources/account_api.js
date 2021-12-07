@@ -19,9 +19,17 @@ class AccountAPI extends RESTDataSource{
     async createTransaction(transaction){
         return await this.post('/transaction/', transaction);
     }
+    
+    async createTransaction(username, account){
+        return await this.post(`/transaction/${username}`, account);
+    }
 
     async transactionByUsername(username){
         return await this.get(`/transactions/${username}`)
+    }
+    
+    willSendRequest(request){
+        request.headers.set('NOMBRE', 'valor')
     }
 }
 
